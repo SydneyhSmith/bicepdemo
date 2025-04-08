@@ -32,7 +32,7 @@ jobs:
           name: Development
           location: westus2
           scope: resourceGroup
-          resource-group-name: pipelinedemo
+          resource-group-name: exampleRG
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           template-file: ./main.bicep
           parameters: '{"name": "Development", "tags": { "environment": "development" }}'
