@@ -35,6 +35,17 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resource-group-name: exampleRG
           template-file: ./main.bicep
+          
+      - name: What-If
+        uses: azure/bicep-deploy@v2
+        with:
+          type: deployment
+          operation: whatIf
+          name: Development
+          scope: resourceGroup
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resource-group-name: example
+          template-file: ./main.bicep
 
       - name: Create
         uses: azure/bicep-deploy@v2
